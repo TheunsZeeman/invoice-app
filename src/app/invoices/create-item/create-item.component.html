@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 >Add Item</h1 >
+
+    <form>
+
+      <div class="mb-3">
+        <label for="txtDescription" class="form-label">Description</label>
+        <input type="text" name="description" [(ngModel)]="itemForm.description" class="form-control" id="txtDescription" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPrice" class="form-label">Price</label>
+        <input type="number" name="price" [(ngModel)]="itemForm.price" class="form-control" id="txtPrice" />
+      </div>
+      <div class="mb-3">
+        <label for="txtQuantity" class="form-label">Quantity</label>
+        <input type="number" name="quantity" [(ngModel)]="itemForm.quantity" class="form-control" id="txtQuantity" />
+      </div>
+      <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+      
+    </form>  <a class="navbar-brand" href="#">Back</a>
+  </div>

@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "invoices": [
+    {
+      "id": 1,
+      "name": "test4",
+      "description": "test description4",
+      "price": 5656
+    },
+    {
+      "id": 2,
+      "name": "test2",
+      "price": 656,
+      "description": "test desc"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "itest1",
+      "description": "itest description4",
+      "quantity": 1,
+      "price": 5000,
+      "invoiceId": 1
+    },
+    {
+      "id": 2,
+      "name": "itest2",
+      "description": "itest description4",
+      "quantity": 1,
+      "price": 656,
+      "invoiceId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

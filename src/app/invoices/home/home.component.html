@@ -1,0 +1,51 @@
+<div class="container" ng-app="invoice">
+    <section class="jumbotron">
+      <h1 >Invoices</h1>
+      
+    </section>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Description</th>
+            <th scope="col">Name</th>
+            <th scope="col">Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of allInvoices">
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.description }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price | currency : "R" }}</td>
+            <td>
+                <a class="btn btn-primary" [routerLink]="['/invoices/edit', item.id]">Edit</a>
+                <button type="button" (click)="openDeleteModal(item.id)" class="btn btn-danger">Delete</button>
+                <!-- <button type="button" (click)="viewItems()" class="btn btn-danger">View Items</button> -->
+                <a class="btn btn-primary" [routerLink]="['/invoices/items', item.id]">View items</a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+      <a class="btn btn-primary" [routerLink]="['/invoices/create']">Create Invoice</a>
+      <button type="button" (click)="export()" class="btn btn-primary">Export to Excel</button>
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure to delete the item?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>

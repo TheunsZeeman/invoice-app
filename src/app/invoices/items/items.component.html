@@ -1,0 +1,33 @@
+<div class="container" ng-app="invoice">
+<section class="jumbotron">
+<h1 >Items</h1>
+</section>
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Description</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr >
+            <td><input type="text" name="id" [(ngModel)]="itemsForm.id" class="form-control" id="txtId" /></td>
+            <td><input type="text" name="description" [(ngModel)]="itemsForm.description" class="form-control" id="txtDescription" /></td>
+            <td><input type="text" name="quantity" [(ngModel)]="itemsForm.quantity" class="form-control" id="txtDescription" /></td>
+            <td>R<input type="text" name="price" [(ngModel)]="itemsForm.price" class="form-control" id="txtPrice" /></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="previousItemsById()">Previous Item</button>
+      <button type="button" class="btn btn-primary" (click)="nextItemsById()">Next Item</button>
+      <a class="btn btn-primary" [routerLink]="['/invoices/createItem']">Add</a>
+    </div>
+    <a class="navbar-brand" href="#">Back</a>
+  </div>
+</div>
