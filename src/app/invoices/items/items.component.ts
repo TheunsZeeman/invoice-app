@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef,ViewChild  } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Items } from '../invoices';
 import { InvoicesService } from '../invoices.service';
+declare var window: any;
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -10,6 +11,8 @@ import { InvoicesService } from '../invoices.service';
 export class ItemsComponent implements OnInit {
   allItems: Items[] = [];
   iId : number = 0;
+  deleteModal: any;
+  idTodelete: number = 0;
   itemsForm: Items = {
     id: 0,
     
@@ -25,6 +28,9 @@ export class ItemsComponent implements OnInit {
   }
  
   ngOnInit(): void {
+    this.deleteModal = new window.bootstrap.Modal(
+      document.getElementById('deleteModal')
+    );
     this.route.paramMap.subscribe((param) => {
       var id = Number(param.get('id'));
       this.getItemsById(id);
@@ -56,5 +62,20 @@ export class ItemsComponent implements OnInit {
       console.log(data);
     });
   }catch(ex){alert(ex);}
+  }
+  openDeleteModal() {
+    this.idTodelete = this.iId;
+    this.deleteModal.show();
+  }
+  delete() {
+    console.log('in del');
+    this.InvoiceService.deleteItem(this.idTodelete).subscribe({
+      next: (data) => {
+        this.allItems = this.allItems.filter(_ => _.id != this.idTodelete)
+        this.deleteModal.hide();
+        window.location.reload();
+      },
+    });
+
   }
 }

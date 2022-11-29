@@ -17,14 +17,12 @@
     {
       "id": 1,
       "name": "test1",
-
       "price": 5656
     },
     {
       "id": 2,
       "name": "test2",
       "price": 656
-
     }
   ],
   "items": [
@@ -41,12 +39,6 @@
       "quantity": 1,
       "price": 656,
       "invoiceId": 1
-    },
-    {
-      "id": 3,
-      "price": 100,
-      "quantity": 1,
-      "description": "test desc2811"
     }
   ],
   "profile": {

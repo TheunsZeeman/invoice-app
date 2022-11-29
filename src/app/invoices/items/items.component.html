@@ -26,8 +26,27 @@
     <div>
         <button type="button" class="btn btn-primary" (click)="previousItemsById()">Previous Item</button>
       <button type="button" class="btn btn-primary" (click)="nextItemsById()">Next Item</button>
+      <button type="button" (click)="openDeleteModal()" class="btn btn-danger">Delete</button>
       <a class="btn btn-primary" [routerLink]="['/invoices/createItem']">Add</a>
     </div>
     <a class="navbar-brand" href="#">Back</a>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete the item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
   </div>
 </div>

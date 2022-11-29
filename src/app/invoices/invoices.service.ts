@@ -32,4 +32,7 @@ export class InvoicesService {
    delete(id:number){
     return this.http.delete<Invoices>(`http://localhost:3000/invoices/${id}`);
  }
+ deleteItem(id:number){
+  return this.http.delete<Items>(`http://localhost:3000/items/${id}`);
+}
 }
