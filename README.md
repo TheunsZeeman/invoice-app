@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =========================================
 For this app to run, run: npm install -g json-server to install json server
 and to run db: npm run json-run 
+to run angular: ng serve --open
