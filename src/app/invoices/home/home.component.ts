@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
       //const wb = XLSX.utils.book_new();
       //const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet([]);
       
-      let Heading = [['id', 'Name', 'Description', 'Quantity', 'Price']];
+      let Heading = [['id', 'Name', 'Total Price']];
       let Heading2 = [['id', 'Description', 'Quantity', 'Price']];
       //Starting in the second row to avoid overriding and skipping headers
      
