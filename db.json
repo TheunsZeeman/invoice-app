@@ -28,14 +28,14 @@
   "items": [
     {
       "id": 1,
-      "description": "itest description4",
+      "description": "itest description",
       "quantity": 1,
       "price": 5000,
       "invoiceId": 1
     },
     {
       "id": 2,
-      "description": "itest description4",
+      "description": "itest description2",
       "quantity": 1,
       "price": 656,
       "invoiceId": 1
