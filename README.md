@@ -27,5 +27,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 =========================================
 For this app to run, run: npm install -g json-server to install json server
+For excel export: npm install xlsx --save  
 and to run db: npm run json-run 
 to run angular: ng serve --open
